@@ -6,5 +6,5 @@ docker-compose up --build -d
 
 ## Lancement du fichier
 
-cd View
+cd View </br>
 php CalculView.php
