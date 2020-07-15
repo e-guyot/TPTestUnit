@@ -18,7 +18,7 @@ class Calcul
         return $a*$b;
     }
 
-    public function div (int $a, int $b)
+    public function div(int $a, int $b)
     {
         if ($b === 0){
             return 'erreur de calcul';
