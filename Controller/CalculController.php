@@ -1,6 +1,6 @@
 <?php 
 
-class Calcul extends Controller
+class Calcul
 {
     
     public function add(int $a, int $b)

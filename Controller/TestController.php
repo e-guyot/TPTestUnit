@@ -1,10 +1,9 @@
 <?php 
 
-class Test extends Controller
+class Test
 {
     public function verifCalcul($function, $resultAttendu){
-        $result = Calcul::$function;
-        if ($result === $resultAttendu){
+        if ($function === $resultAttendu){
             return 'Test réussi';
         }
         return 'Test échoué';
