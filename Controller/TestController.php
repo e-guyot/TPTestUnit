@@ -1,11 +1,37 @@
 <?php 
-
+include_once('../Controller/UserController.php');
 class Test
 {
-    public function verifCalcul($function, $resultAttendu){
-        if ($function === $resultAttendu){
-            return 'Test réussi';
+
+    public function isAnEmail($value)
+    {
+        if (!filter_var($value, FILTER_VALIDATE_EMAIL)){
+            return FALSE;
         }
-        return 'Test échoué';
+        return $value;
+    }
+
+    public function AgeisCorrect($age)
+    {
+        if($age >= 13){
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+    public function NomOrPrenomIsCorrect($value)
+    {
+        if(isset($value) && is_string($value)){
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+    public function isValid($user)
+    {
+        if(Test::NomOrPrenomIsCorrect($user->getNom()) && Test::NomOrPrenomIsCorrect($user->getPrenom()) && Test::AgeisCorrect($user->getAge()) && Test::isAnEmail($user->getEmail())){
+            return 'Le formulaire est bien valide';
+        }
+        return 'Le formulaire n\'est pas correct';
     }
 }
