@@ -5,7 +5,7 @@ class Test
 
     public function isAnEmail($value)
     {
-        if (!filter_var($value, FILTER_VALIDATE_EMAIL)){
+        if (isset($email) && is_strong($email) && !filter_var($value, FILTER_VALIDATE_EMAIL)){
             return FALSE;
         }
         return $value;
@@ -13,7 +13,7 @@ class Test
 
     public function AgeisCorrect($age)
     {
-        if($age >= 13){
+        if(isset($age) && is_int($age) && $age >= 13){
             return TRUE;
         }
         return FALSE;
